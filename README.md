@@ -181,7 +181,7 @@
                 <div class="text-center max-w-3xl mx-auto animate-slide-up">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-medium mb-6 animate-pulse-slow">
                         <span class="w-2 h-2 rounded-full bg-primary"></span>
-                        Developing for the Future of Roleplay
+                        Proper website coming in January
                     </div>
                     <h1 class="text-5xl md:text-7xl font-display font-bold mb-6 hero-text-gradient tracking-tight">
                         Enhancing your <br />
