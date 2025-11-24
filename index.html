@@ -273,7 +273,7 @@
                         <div class="flex justify-between items-center mb-6">
                             <div>
                                 <h3 class="text-2xl font-bold text-white">Parameter Settings</h3>
-                                <p class="text-slate-400 text-sm">Target: <span class="text-primary font-mono">Sonnet 4.5</span></p>
+                                <p class="text-slate-400 text-sm">Primary Target: <span class="text-primary font-mono">Sonnet 4.5</span></p>
                             </div>
                         </div>
                         
@@ -367,7 +367,7 @@ If no OOC: Begin with &lt;think&gt;\n output.
 * {{user}}'s last action/speech | {{char}}'s last action/speech | NPC actions/speech
 * If multiple characters present: ensure each present character gets at least one clear line/action; balance speaking turns and avoid crowding a single voice.
 
-**1.1 Multi-Character Balance**
+**1.5. Multi-Character Balance**
 
 * If multiple characters are present: ensure each gets one clear action or line
 * Maintain balanced turn-taking without overcrowding
@@ -375,7 +375,7 @@ If no OOC: Begin with &lt;think&gt;\n output.
 
 **2. Character Check**
 
-**2.1 Internal Dialogue Reinforcement**
+**2.5 Internal Dialogue Reinforcement**
 
 * Ensure {{char}} uses internal dialogue when fitting
 
@@ -411,7 +411,7 @@ If no OOC: Begin with &lt;think&gt;\n output.
 
 **5: Narrative Guidance**
 
-**5.1 For starting new scenes**
+* For starting new scenes:
 
   * Try different openings (in media res, epigraph, etc.)
   * Draft first few beats
@@ -424,22 +424,12 @@ If no OOC: Begin with &lt;think&gt;\n output.
   * Perform seamless weave into new threads
   * Ensure fresh narrative with no repeated themes, dialogue, or thoughts
 
-**5.2 Response Plan**
+**5. Response Plan**
 
 * Review dialogue/story rules | Ground in {{char}}'s voice
 * Encourage internal dialogue wrapped in *asterisks* when appropriate
 * Reaction logic based on character | Next action from that reaction
 * Beat check: Does {{user}} need to resolve something? Does branch need elaboration? Avoid repetitive questions—use calls to action.
-
-**5.3 Combat Handling (Ultra-Light)**
-
-* If combat is present or imminent:
-
-  * Commit to action: {{char}} should take decisive, character-appropriate moves
-  * Maintain clear sequencing: who acts first, next, and impact
-  * Keep actions physically plausible (tie into Anatomy Check)
-  * Provide openings for {{user}} to react without forcing outcomes
-  * Use internal dialogue (*asterisks*) to convey instinct, fear, resolve, or tactical thought
 
 **6. Anatomy Check**
 
@@ -540,7 +530,7 @@ Close with \n&lt;/think&gt; output, then deliver response.</div>
                 description: "Companion to Character Expressions. Swaps costumes/avatars based on the active speaker in real-time.",
                 longDescription: "Costume Switcher listens to the streaming output from your model, scores every character mention it finds, and immediately updates the displayed costume to match the active speaker. It ships with a powerful custom detection engine (v4) that handles attribution, action beats, and fuzzy matching, plus a Live Pattern Tester and slash commands to give you full control over your stage crew.",
                 features: ["Narrative-Aware Detection", "Scene Roster Logic", "Live Pattern Tester", "Custom Detection Engine v4"],
-                installCommand: "/extensions install https://github.com/Archkr/SillyTavern-CostumeSwitch",
+                installCommand: "https://github.com/Archkr/SillyTavern-CostumeSwitch",
                 stargazers_count: 124, forks_count: 12, pushed_at: "2023-10-15T10:00:00Z", language: "JavaScript",
                 upvotes: 36
             },
@@ -549,7 +539,7 @@ Close with \n&lt;/think&gt; output, then deliver response.</div>
                 description: "A slim, single-character wardrobe manager. Fires costumes based on keywords or regex triggers.",
                 longDescription: "Spun out of the Costume Switcher's Outfit Lab, this extension focuses on single-character automation. It watches streaming responses for specific triggers to change outfits instantly while preserving manual overrides. It's the ideal lightweight alternative for focused setups or specific character workflows.",
                 features: ["Single-Character Focus", "Stream-Aware Triggers", "Variant Shortcuts", "Manual Safety Net"],
-                installCommand: "/extensions install https://github.com/Archkr/SillyTavern-OutfitSwitch",
+                installCommand: "https://github.com/Archkr/SillyTavern-OutfitSwitch",
                 stargazers_count: 89, forks_count: 8, pushed_at: "2023-11-02T14:30:00Z", language: "JavaScript",
                 upvotes: 10
             },
@@ -558,7 +548,7 @@ Close with \n&lt;/think&gt; output, then deliver response.</div>
                 description: "A comprehensive world-building engine for SillyTavern. Manage complex states, locations, and time-based events.",
                 longDescription: "Turn SillyTavern into a living, breathing world. ST-WorldEngine introduces a robust state management system that tracks global variables, NPC locations, and world events. It's the backbone for complex RPG-style roleplays where actions have lasting consequences.",
                 features: ["Global State Variables", "Location Tracking System", "Event Scheduler", "Inventory Management API"],
-                installCommand: "/extensions install https://github.com/Archkr/ST-WorldEngine",
+                installCommand: "https://github.com/Archkr/ST-WorldEngine",
                 stargazers_count: 245, forks_count: 34, pushed_at: "2023-12-01T09:15:00Z", language: "TypeScript",
                 upvotes: 22
             },
@@ -937,7 +927,7 @@ Close with \n&lt;/think&gt; output, then deliver response.</div>
                             
                             ${!isLorebook ? `
                             <div class="relative">
-                                <div class="text-xs text-slate-500 mb-2 uppercase font-bold tracking-wider">Install Command</div>
+                                <div class="text-xs text-slate-500 mb-2 uppercase font-bold tracking-wider">Install Link</div>
                                 <div class="bg-black/40 rounded-lg p-3 text-xs font-mono text-slate-300 break-all border border-white/5 cursor-pointer hover:border-white/20 transition-colors" onclick="copyToClipboard('${data.installCommand}')">
                                     $ ${data.installCommand}
                                 </div>
