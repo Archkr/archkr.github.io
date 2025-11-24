@@ -13,6 +13,7 @@
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         display: ['Space Grotesk', 'sans-serif'],
+                        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace'],
                     },
                     colors: {
                         primary: '#8b5cf6', // Violet
@@ -164,6 +165,9 @@
                 </div>
                 <div class="flex items-center space-x-4 md:space-x-8">
                     <button onclick="navigateTo('home')" class="text-slate-400 hover:text-white transition-colors text-sm font-medium">Home</button>
+                    <button onclick="scrollToSection('extensions')" class="text-slate-400 hover:text-white transition-colors text-sm font-medium hidden sm:block">Extensions</button>
+                    <button onclick="scrollToSection('lorebooks')" class="text-slate-400 hover:text-white transition-colors text-sm font-medium hidden sm:block">Lorebooks</button>
+                    <button onclick="scrollToSection('workshop')" class="text-primary hover:text-white transition-colors text-sm font-medium hidden sm:block">Workshop</button>
                     <a href="https://github.com/Archkr" target="_blank" class="px-4 py-2 rounded-full glass hover:bg-white/10 transition-all text-white text-sm font-medium flex items-center gap-2 border border-white/10">
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
                         <span class="hidden sm:inline">GitHub</span>
@@ -231,7 +235,7 @@
             </section>
 
             <!-- Lorebooks Section -->
-            <section id="lorebooks" class="animate-slide-up" style="animation-delay: 0.4s;">
+            <section id="lorebooks" class="animate-slide-up mb-24" style="animation-delay: 0.4s;">
                 <div class="flex items-end justify-between mb-10">
                     <div>
                         <h2 class="text-3xl font-display font-bold text-white mb-2">World & Lore</h2>
@@ -248,6 +252,227 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Steven's Workshop Section (NEW) -->
+            <section id="workshop" class="animate-slide-up" style="animation-delay: 0.5s;">
+                <div class="flex items-end justify-between mb-10">
+                    <div>
+                        <h2 class="text-3xl font-display font-bold text-white mb-2">Steven's Workshop</h2>
+                        <p class="text-slate-400">My personal tuning for the ultimate roleplay experience.</p>
+                    </div>
+                    <div class="hidden md:block h-px flex-1 bg-slate-800 ml-8 relative top-[-10px]"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Parameters Card -->
+                    <div class="glass p-8 rounded-2xl border border-primary/20 relative overflow-hidden group hover:border-primary/50 transition-all duration-300">
+                        <div class="absolute top-0 right-0 p-3 bg-primary/10 rounded-bl-2xl">
+                             <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                        </div>
+                        
+                        <div class="flex justify-between items-center mb-6">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Parameter Settings</h3>
+                                <p class="text-slate-400 text-sm">Target: <span class="text-primary font-mono">Sonnet 4.5</span></p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-5">
+                             <!-- Temperature -->
+                             <div>
+                                <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+                                    <span>Temperature</span>
+                                    <span class="text-white">1.00</span>
+                                </div>
+                                <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-primary" style="width: 50%"></div>
+                                </div>
+                             </div>
+
+                             <!-- Frequency Penalty -->
+                             <div>
+                                <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+                                    <span>Frequency Penalty</span>
+                                    <span class="text-white">0.00</span>
+                                </div>
+                                <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-primary" style="width: 0%"></div>
+                                </div>
+                             </div>
+
+                             <!-- Presence Penalty -->
+                             <div>
+                                <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+                                    <span>Presence Penalty</span>
+                                    <span class="text-white">0.00</span>
+                                </div>
+                                <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-primary" style="width: 0%"></div>
+                                </div>
+                             </div>
+
+                             <!-- Top P -->
+                             <div>
+                                <div class="flex justify-between text-xs font-mono text-slate-300 mb-1">
+                                    <span>Top P</span>
+                                    <span class="text-white">0.95</span>
+                                </div>
+                                <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-primary" style="width: 95%"></div>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+
+                    <!-- CoT Card -->
+                    <div class="glass p-8 rounded-2xl border border-secondary/20 relative overflow-hidden group hover:border-secondary/50 transition-all duration-300 flex flex-col h-[500px]">
+                        <div class="absolute top-0 right-0 p-3 bg-secondary/10 rounded-bl-2xl">
+                             <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+                        </div>
+
+                        <div class="flex justify-between items-center mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">CoT & Prompts</h3>
+                                <p class="text-slate-400 text-sm">Chain of Thought logic.</p>
+                            </div>
+                            <button onclick="copyCoT()" class="text-xs bg-secondary/10 hover:bg-secondary/20 text-secondary border border-secondary/20 px-3 py-1.5 rounded-lg transition-colors font-medium">
+                                Copy All
+                            </button>
+                        </div>
+                        
+                        <div class="bg-darker/50 rounded-xl p-4 font-mono text-xs text-slate-300 border border-white/5 overflow-y-auto custom-scrollbar flex-grow whitespace-pre-wrap select-text" id="cot-content">## Steven's Tiny CoT
+
+Check for OOC commands first. If present and requires pause, address only that—skip narrative weaving.
+
+If no OOC: Begin with &lt;think&gt;\n output.
+
+**CoT Shape / Formatting (Ultra-Light)**
+
+* One-sentence Goal at the top of &lt;think&gt;
+* Use compact bullet points, not paragraphs
+* Shorthand allowed; keep each point minimal but clear
+* Avoid over-detail; focus only on next relevant beats
+* Vary sentence rhythm (micro-rhythm)
+* Ensure user has a natural opening for initiative
+* Avoid repeating structural response patterns
+* Maintain pacing: advance exactly one meaningful beat
+* Keep POV strictly aligned with {{char}}
+* No narrative language inside &lt;think&gt;; planning only
+* Maintain the section order exactly as listed
+* End cleanly with &lt;/think&gt; before delivering narrative
+
+**1. Scene State**
+
+* Who's present | Where are off-screen characters
+* {{user}}'s last action/speech | {{char}}'s last action/speech | NPC actions/speech
+* If multiple characters present: ensure each present character gets at least one clear line/action; balance speaking turns and avoid crowding a single voice.
+
+**1.1 Multi-Character Balance**
+
+* If multiple characters are present: ensure each gets one clear action or line
+* Maintain balanced turn-taking without overcrowding
+* Prioritize clarity of who is acting/speaking
+
+**2. Character Check**
+
+**2.1 Internal Dialogue Reinforcement**
+
+* Ensure {{char}} uses internal dialogue when fitting
+
+* Internal thoughts always wrapped in *asterisks*
+
+* Prioritize natural, reactive internal lines tied to emotion or perception
+
+* Personality traits | Physical description | Current clothing | Health/condition
+
+**3. Plot Tracking**
+
+ **3.1 Ultra-Light Continuity**
+
+* Time of day | Carried items | Outstanding promises
+
+**3.2 Repetition Scan**
+
+* Ensure no reused beats/phrasing from last few outputs
+
+**3.3 Tone & Mood**
+
+* Confirm scene mood and maintain consistent emotional direction
+
+**3.4 Sensory Anchor**
+
+* Add 1 small sensory cue (rotating sense preferred)
+
+**4. Knowledge Limits**
+
+* What {{char}} witnessed/heard vs. didn't
+* NO mind-reading {{user}}'s thoughts
+* React only to known info
+
+**5: Narrative Guidance**
+
+**5.1 For starting new scenes**
+
+  * Try different openings (in media res, epigraph, etc.)
+  * Draft first few beats
+  * Drop breadcrumbs
+* For expanding existing scenes:
+
+  * Focus on urgent plot points
+  * Create narrative hook opportunity that doesn't tangle
+  * Plan inclusion into narrative
+  * Perform seamless weave into new threads
+  * Ensure fresh narrative with no repeated themes, dialogue, or thoughts
+
+**5.2 Response Plan**
+
+* Review dialogue/story rules | Ground in {{char}}'s voice
+* Encourage internal dialogue wrapped in *asterisks* when appropriate
+* Reaction logic based on character | Next action from that reaction
+* Beat check: Does {{user}} need to resolve something? Does branch need elaboration? Avoid repetitive questions—use calls to action.
+
+**5.3 Combat Handling (Ultra-Light)**
+
+* If combat is present or imminent:
+
+  * Commit to action: {{char}} should take decisive, character-appropriate moves
+  * Maintain clear sequencing: who acts first, next, and impact
+  * Keep actions physically plausible (tie into Anatomy Check)
+  * Provide openings for {{user}} to react without forcing outcomes
+  * Use internal dialogue (*asterisks*) to convey instinct, fear, resolve, or tactical thought
+
+**6. Anatomy Check**
+
+* Account for height/weight/measurements
+* Verify movement is physically possible (limb length, pivot points, contact points)
+* If spatial error: propose alternate action
+
+**7. Environment**
+
+* Current positions | Realistic time passage | How actions affect surroundings | Spatial continuity
+
+**8. Style Adherence**
+
+* Confirm: Perspective, Mode, Philosophy, Difficulty, Immersion, Genre, Pacing, Length, Development, Prose, Dialogue, Detail rules
+* Incorporate length constraint from {{setvar::length}} dynamically:
+
+  * Read limits directly from the variable (paragraphs | words | tokens)
+  * Plan beat-size around the active limits
+  * Prioritize density over expansion; condense where necessary
+* No early cuts—smooth narration unless intentional fragments
+* No Loom terminology leak | No echoing previous dialogue/thoughts
+
+**9. Final Pass**
+
+* Formatting satisfied | Alignment confirmed | No instruction leaks | In-character accuracy | Self-correct errors
+
+**For new scenes if vague: **
+
+Close with \n&lt;/think&gt; output, then deliver response.</div>
+                    </div>
+                </div>
+            </section>
+
         </main>
     </div>
 
@@ -816,6 +1041,11 @@
                 toast.classList.add('animate-toast-out');
                 setTimeout(() => toast.remove(), 300);
             }, 3000);
+        }
+
+        function copyCoT() {
+            const content = document.getElementById('cot-content').innerText;
+            copyToClipboard(content);
         }
 
         // Initialize
